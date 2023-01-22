@@ -1,5 +1,5 @@
 let growingPlants = []
 
-const addPlant = () => {
-    
+const addPlant = (seedObject) => {
+    growingPlants.push(seedObject)
 }
