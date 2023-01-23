@@ -1,4 +1,4 @@
-const createCorn = () => {
+export const createCorn = () => {
     return [ {
         type: "Corn",
         height: 180,
@@ -11,4 +11,3 @@ const createCorn = () => {
     }  
     ]
 }
-module.exports = {createCorn}

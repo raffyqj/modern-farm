@@ -2,16 +2,51 @@
 
 // const yearlyPlan = createPlan()
 
+import { createPlan } from "./plan.js"
+import{ createAsparagus } from './seeds/asparagus.js'
+import{ createSoybean } from './seeds/soybean.js'
+import{ createCorn } from './seeds/corn.js'
+import{ createPotato } from './seeds/potato.js'
+import{ createSunflower } from './seeds/sunflower.js'
+import{ createWheat } from './seeds/wheat.js'
+import{ plantSeeds } from './tractor.js'
+import{ usePlants } from './field.js'
+import{ addPlant } from './field.js'
+import{ harvestPlants } from './harvester.js'
+import{ catalog } from './catalog.js'
 
-const {createAsparagus} = require("./seeds/asparagus.js")
-const {createSoybean} = require("./seeds/soybeans.js")
-const {createCorn} = require("./seeds/corn.js")
-const {createSunflower} = require("./seeds/sunflower.js")
-const {createWheat} = require("./seeds/wheat.js")
-const {createPotato} = require("./seeds/potato.js")
 
+const yearlyPlan = createPlan()
 
-console.log(createSoybean())
-const asparagusSeed = createAsparagus()
-console.log(asparagusSeed)
+const asparaguses = createAsparagus()
 
+const soybeans = createSoybean()
+
+const corns = createCorn()
+
+const sunflowers = createSunflower()
+
+const wheats = createWheat()
+
+const potatoes = createPotato()
+
+plantSeeds(yearlyPlan)
+const using = usePlants()
+
+const harvesting = harvestPlants(using)
+
+const cataloging = catalog(harvesting)
+const cataloger = document.querySelector(".container")
+
+let plantingPlan = [
+    ["Potato", "Soybean", "Soybean", "Corn"],
+    ["Wheat", "Corn", "Wheat", "Asparagus"],
+    ["Asparagus", "Wheat", "Soybean", "Corn"]
+]
+
+plantSeeds(plantingPlan)
+
+const growingPlants = usePlants()
+console.log(growingPlants)
+let harvestSeeds = harvestPlants(growingPlants)
+catalog(harvestSeeds)
