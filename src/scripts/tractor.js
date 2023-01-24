@@ -14,23 +14,30 @@ export const plantSeeds = (plantingPlan) => {
             let seedObject
             if (seed === 'Potato'){
                 seedObject = createPotato()
+                addPlant(seedObject)
             }
             else if (seed === 'Asparagus'){
                 seedObject = createAsparagus()
+                addPlant(seedObject)
             }
             else if (seed === 'Corn'){
                 seedObject = createCorn()
+                addPlant(seedObject[0])
+                addPlant(seedObject[0])
             }
             else if (seed === 'Soybean') {
                 seedObject = createSoybean()
+                addPlant(seedObject)
             }
             else if (seed === 'Sunflower'){
                 seedObject = createSunflower()
+                addPlant(seedObject)
             }
             else if (seed === 'Wheat'){
                 seedObject = createWheat()
+                addPlant(seedObject)
             }
-            addPlant(seedObject)
+            
        }
     }
 }
